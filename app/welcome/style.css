@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+#welcome {
+    & .title {
+        font-size: 3.5rem;
+        line-height: 4rem;
+        font-weight: 600;
+        color: #0C2D66;
+    }
+
+    & .graduation {
+        @apply font-bold;
+
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+    & .university {
+        @apply italic;
+        @apply font-extralight;
+
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+    & #image-container {
+        width: 80%;
+        height: 493.2px;
+        position: relative;
+        display: block;
+        overflow: visible;
+
+        & .panel {
+            width: 297.6px;
+            border-radius: 1.5rem;
+            display: block;
+            position: absolute;
+        }
+
+        & #panel-1 {
+            height: 493.2px;
+            background: #0C2D66;
+            z-index: 2;
+            bottom: 28px;
+        }
+
+        & #panel-2 {
+            height: 376.8px;
+            background: #47979F;
+            z-index: 1;
+            left: 32px;
+            bottom: 0;
+        }
+
+        & #image {
+            z-index: 3;
+            left: 16px;
+            bottom: 28px;
+            position: absolute;
+        }
+    }
+}
