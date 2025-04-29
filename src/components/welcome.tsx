@@ -9,7 +9,7 @@ const Welcome = () => {
           <div className='panel' id='panel-2'></div>
           <Image
             id='image'
-            src='/BrendaGaio.png'
+            src='BrendaGaio.png'
             alt='Brenda Aldrovandi Gaio'
             width={401 * 0.75}
             height={622 * 0.75}
