@@ -15,6 +15,7 @@ const Top = React.forwardRef<HTMLDivElement>((_props, ref) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const timersRef = useRef<{ [key: string]: NodeJS.Timeout }>({});
   const isMobile = useIsMobile();
+  const [contentVisible, setContentVisible] = useState(false); // Novo estado para controlar a visibilidade do conteúdo
 
   useEffect(() => {
     const startAnimations = () => {
@@ -23,24 +24,14 @@ const Top = React.forwardRef<HTMLDivElement>((_props, ref) => {
 
       // Resetar estados se não estiver em view
       if (!isInView) {
-        // setLogoVisible(false);
-        // setFirstPhraseVisible(false);
-        // setSecondPhraseVisible(false);
-        // setRoleVisible(false);
+        setContentVisible(false); // Esconde o conteúdo se não estiver em view
         return;
       }
 
-      // // Inicia a logo e 'role para continuar'
-      // timersRef.current.timerLogo = setTimeout(() => setLogoVisible(true), 100);
-
-      // // Inicia a primeira frase com delay
-      // timersRef.current.timer1 = setTimeout(() => setFirstPhraseVisible(true), 300);
-
-      // // Inicia a segunda frase com delay adicional
-      // timersRef.current.timer2 = setTimeout(() => setSecondPhraseVisible(true), 1000);
-
-      // // Inicia o 'role para continuar' junto com a logo
-      // timersRef.current.timer3 = setTimeout(() => setRoleVisible(true), 100);
+      // Inicia a animação de expansão
+      timersRef.current.timerExpand = setTimeout(() => {
+        setContentVisible(true); // Torna o conteúdo visível após a expansão
+      }, 1000); // Atraso igual à duração da animação de expansão
     };
 
     startAnimations();
@@ -86,10 +77,15 @@ const Top = React.forwardRef<HTMLDivElement>((_props, ref) => {
         }
         sectionRef.current = node;
       }}
-      className='w-full h-dvh flex flex-wrap items-center justify-evenly py-[24px]'>
-      <div 
+      className='w-full h-dvh flex flex-wrap items-center justify-evenly py-[24px]'
+      style={{
+        scale: isMobile ? 0.8 : 1,
+        transformOrigin: 'top',
+      }}
+    >
+      <div
         className={`w-fit ${isMobile ? 'h-fit' : 'h-screen'} flex justify-center items-center`}
-        >
+      >
         <div id='image-container'>
           <div className='panel' id='panel-1'></div>
           <div className='panel' id='panel-2'></div>
@@ -103,12 +99,21 @@ const Top = React.forwardRef<HTMLDivElement>((_props, ref) => {
         </div>
       </div>
 
-      <div className='w-[500px] flex flex-col gap-[2rem] p-[2rem]'>
-        <h1 className='title'>Prazer, Brenda Aldrovandi Gaio</h1>
+      <div className={`w-[500px] flex flex-col gap-[2rem] p-[2rem] ${contentVisible ? 'expand-horizontal' : ''}`}>
+        <h1
+          className={`title ${contentVisible ? 'fade-in' : 'invisible'}`} // Aplica a classe de fade-in quando o conteúdo é visível
+          style={{
+            fontSize: isMobile ? '2.7rem' : '3.5rem',
+          }}
+        >
+          Prazer, Brenda Aldrovandi Gaio
+        </h1>
 
-        <p className='graduation'>Engenheira de Software</p>
+        <p className={`graduation ${contentVisible ? 'fade-in' : 'invisible'}`}>
+          Engenheira de Software
+        </p>
 
-        <p className='university'>
+        <p className={`university ${contentVisible ? 'fade-in' : 'invisible'}`}>
           Graduada pela Universidade Católica de Santa Catarina
         </p>
       </div>

@@ -17,8 +17,6 @@ body {
 
   #top {
     & .title {
-      font-size: 3.5rem;
-      line-height: 4rem;
       font-weight: 600;
       color: #0C2D66;
     }
