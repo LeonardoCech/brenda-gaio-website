@@ -1,5 +1,7 @@
+import Image from 'next/image';
 
-import './style.css';
+import '@/styles/welcome.css';
+
 
 const Welcome = () => {
   return (
@@ -8,9 +10,9 @@ const Welcome = () => {
         <div id='image-container'>
           <div className='panel' id='panel-1'></div>
           <div className='panel' id='panel-2'></div>
-          <img
+          <Image
             id='image'
-            src='/app/welcome/Brenda.png'
+            src='/BrendaGaio.png'
             alt='Brenda Aldrovandi Gaio'
             width={401 * 0.75}
             height={622 * 0.75}
@@ -30,5 +32,4 @@ const Welcome = () => {
     </div>
   );
 }
-
 export default Welcome;
