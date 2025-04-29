@@ -1,8 +1,5 @@
 import Image from 'next/image';
 
-import '@/styles/welcome.css';
-
-
 const Welcome = () => {
   return (
     <div id='welcome' className='w-full h-screen flex flex-wrap items-center justify-evenly'>
@@ -32,4 +29,5 @@ const Welcome = () => {
     </div>
   );
 }
+
 export default Welcome;
