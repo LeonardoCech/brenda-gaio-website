@@ -5,8 +5,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true, // Necessário para exportação estática
   },
-  basePath: '',
-  assetPrefix: './'
+  basePath: '/brenda-gaio-website',
+  assetPrefix: '/brenda-gaio-website/'
 };
 
 export default nextConfig;

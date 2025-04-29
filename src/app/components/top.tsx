@@ -104,6 +104,7 @@ const Top = React.forwardRef<HTMLDivElement>((_props, ref) => {
           className={`title ${contentVisible ? 'fade-in' : 'invisible'}`} // Aplica a classe de fade-in quando o conteúdo é visível
           style={{
             fontSize: isMobile ? '2.7rem' : '3.5rem',
+            lineHeight: isMobile ? '3rem' : '3.8rem',
           }}
         >
           Prazer, Brenda Aldrovandi Gaio
