@@ -3,6 +3,10 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --color-pri: #0C2D66;
+  --color-sec: #47979F;
+  --color-ter: #F0F0F0;
 }
 
 @theme inline {
@@ -13,13 +17,13 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Helvetica, sans-serif;
 
   #top {
     & .title {
       font-weight: 600;
       white-space: nowrap;
-      color: #0C2D66;
+      color: var(--color-pri);
     }
 
     & .graduation {
@@ -54,14 +58,14 @@ body {
 
       & #panel-1 {
         height: calc(810px * 0.7);
-        background: #0C2D66;
+        background: var(--color-pri);
         z-index: 2;
         bottom: calc(62px * 0.7);
       }
 
       & #panel-2 {
         height: calc(622px * 0.7);
-        background: #47979F;
+        background: var(--color-sec);
         z-index: 1;
         left: calc(62px * 0.7);
         bottom: 0;
@@ -72,7 +76,31 @@ body {
         left: calc(28px * 0.7);
         bottom: calc(62px * 0.7);
         position: absolute;
-        filter: drop-shadow(1rem 1rem 1rem rgba(0, 0, 0, .5)); 
+        filter: drop-shadow(1rem 1rem 1rem rgba(0, 0, 0, .5));
+      }
+    }
+  }
+
+  #contact {
+    background-color: var(--color-sec);
+
+    .container {
+      background-color: var(--color-ter);
+      box-shadow: 0px 1rem 1rem rgba(0, 0, 0, 0.1);
+      color: var(--color-pri);
+
+      & .content {
+        text-align: center;
+
+        & h1 {
+          font-weight: 700;
+          text-align: center;
+        }
+
+        & p {
+          font-size: 1rem;
+          font-weight: bold;
+        }
       }
     }
   }

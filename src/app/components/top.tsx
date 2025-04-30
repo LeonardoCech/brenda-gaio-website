@@ -7,11 +7,9 @@ import useIsMobile from './isMobile';
 
 const Top = React.forwardRef<HTMLDivElement>((_props, ref) => {
 
-  // const [logoVisible, setLogoVisible] = useState(false);
-  // const [firstPhraseVisible, setFirstPhraseVisible] = useState(false);
-  // const [secondPhraseVisible, setSecondPhraseVisible] = useState(false);
-  // const [roleVisible, setRoleVisible] = useState(false);
   const isMobile = useIsMobile();
+  const width = isMobile ? '400px' : '1264px';
+
   const [isInView, setIsInView] = useState(true); // Assume que está em view inicialmente
   const sectionRef = useRef<HTMLDivElement>(null);
   const timersRef = useRef<{ [key: string]: NodeJS.Timeout }>({});
@@ -22,11 +20,11 @@ const Top = React.forwardRef<HTMLDivElement>((_props, ref) => {
       // Limpar timers anteriores
       Object.values(timersRef.current).forEach(timer => clearTimeout(timer));
 
-      // Resetar estados se não estiver em view
-      if (!isInView) {
-        setContentVisible(false); // Esconde o conteúdo se não estiver em view
-        return;
-      }
+      // // Resetar estados se não estiver em view
+      // if (!isInView) {
+      //   setContentVisible(false); // Esconde o conteúdo se não estiver em view
+      //   return;
+      // }
 
       // Inicia a animação de expansão
       timersRef.current.timerExpand = setTimeout(() => {
@@ -77,15 +75,18 @@ const Top = React.forwardRef<HTMLDivElement>((_props, ref) => {
         }
         sectionRef.current = node;
       }}
-      className='w-full h-dvh flex flex-wrap justify-evenly items-center'
+      className='w-full h-fit flex flex-wrap justify-evenly items-center'
+      style={{ width }}
     >
       <div
         className={`w-fit h-fit flex justify-center items-center`}
-        style={{
-          marginTop: isMobile ? '-7rem' : '0rem',
-        }}
       >
-        <div id='image-container'>
+        <div 
+          id='image-container'
+          style={{
+            marginTop: isMobile ? '-5rem' : '5rem'
+          }}
+        >
           <div className='panel' id='panel-1'></div>
           <div className='panel' id='panel-2'></div>
 
