@@ -14,7 +14,7 @@ const Page = () => {
   const topRef = useRef<HTMLDivElement>(null)
 
   const isMobile = useIsMobile();
-  const width = isMobile ? '450px' : '1264px';
+  const width = isMobile ? '400px' : '1264px';
 
 
   useEffect(() => {

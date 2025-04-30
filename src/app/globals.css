@@ -17,8 +17,6 @@ body {
 
   #top {
     & .title {
-      font-size: 4rem;
-      line-height: 4rem;
       font-weight: 600;
       white-space: nowrap;
       color: #0C2D66;
@@ -41,38 +39,38 @@ body {
     }
 
     & #image-container {
-      width: calc(550px * 0.8);
-      height: calc(872px * 0.8);
+      width: calc(550px * 0.7);
+      height: calc(872px * 0.7);
       position: relative;
       display: block;
       overflow: visible;
 
       & .panel {
-        width: calc(488px * 0.8);
+        width: calc(488px * 0.7);
         border-radius: 1rem;
         display: block;
         position: absolute;
       }
 
       & #panel-1 {
-        height: calc(810px * 0.8);
+        height: calc(810px * 0.7);
         background: #0C2D66;
         z-index: 2;
-        bottom: calc(62px * 0.8);
+        bottom: calc(62px * 0.7);
       }
 
       & #panel-2 {
-        height: calc(622px * 0.8);
+        height: calc(622px * 0.7);
         background: #47979F;
         z-index: 1;
-        left: calc(62px * 0.8);
+        left: calc(62px * 0.7);
         bottom: 0;
       }
 
       & #image {
         z-index: 3;
-        left: calc(28px * 0.8);
-        bottom: calc(62px * 0.8);
+        left: calc(28px * 0.7);
+        bottom: calc(62px * 0.7);
         position: absolute;
         filter: drop-shadow(1rem 1rem 1rem rgba(0, 0, 0, .5)); 
       }

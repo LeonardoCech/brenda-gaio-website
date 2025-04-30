@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 import Image from 'next/image';
+import useIsMobile from './isMobile';
 
 const Top = React.forwardRef<HTMLDivElement>((_props, ref) => {
 
@@ -10,6 +11,7 @@ const Top = React.forwardRef<HTMLDivElement>((_props, ref) => {
   // const [firstPhraseVisible, setFirstPhraseVisible] = useState(false);
   // const [secondPhraseVisible, setSecondPhraseVisible] = useState(false);
   // const [roleVisible, setRoleVisible] = useState(false);
+  const isMobile = useIsMobile();
   const [isInView, setIsInView] = useState(true); // Assume que está em view inicialmente
   const sectionRef = useRef<HTMLDivElement>(null);
   const timersRef = useRef<{ [key: string]: NodeJS.Timeout }>({});
@@ -79,10 +81,11 @@ const Top = React.forwardRef<HTMLDivElement>((_props, ref) => {
     >
       <div
         className={`w-fit h-fit flex justify-center items-center`}
+        style={{
+          marginTop: isMobile ? '-7rem' : '0rem',
+        }}
       >
-        <div
-          id='image-container'
-        >
+        <div id='image-container'>
           <div className='panel' id='panel-1'></div>
           <div className='panel' id='panel-2'></div>
 
@@ -90,14 +93,26 @@ const Top = React.forwardRef<HTMLDivElement>((_props, ref) => {
             id='image'
             src='image.png'
             alt='Brenda Aldrovandi Gaio'
-            width={490 * .8}
-            height={770 * .8}
+            width={490 * .7}
+            height={770 * .7}
           />
         </div>
       </div>
 
-      <div className={`w-[500px] flex flex-col gap-[4rem] ${contentVisible ? 'expand-horizontal' : ''}`}>
-        <span className='flex flex-col gap-[.75rem] pt-[10rem]'>
+      <div
+        className={`flex flex-col gap-[4rem] ${contentVisible ? 'expand-horizontal' : ''}`}
+        style={{
+          width: isMobile ? '400px' : '500px',
+          fontSize: isMobile ? '3.25rem' : '4rem',
+          lineHeight: isMobile ? '3.25rem' : '4rem',
+        }}
+      >
+        <span
+          className='flex flex-col gap-[.75rem]'
+          style={{
+            paddingTop: isMobile ? '2rem' : '10rem',
+          }}
+        >
           <h1 className={`title ${contentVisible ? 'fade-in' : 'invisible'}`} >
             Prazer, Brenda
           </h1>
