@@ -19,6 +19,24 @@ body {
   color: var(--foreground);
   font-family: 'Inter', Helvetica, sans-serif;
 
+  #download-portfolio-button {
+    color: var(--color-pri);
+    font-size: 1.25rem;
+    border: 2px solid var(--color-pri);
+    border-radius: 100px;
+    padding: 0.75rem 3rem;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: #0C2D66;
+      color: var(--color-ter);
+
+      & img {
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+      }
+    }
+  }
+
   #top {
     & .title {
       font-weight: 600;
@@ -28,55 +46,41 @@ body {
 
     & .graduation {
       @apply font-bold;
-
-      font-size: 2rem;
-      line-height: 2rem;
     }
 
     & .university {
       @apply italic;
       @apply font-[Montserrat];
 
-      font-size: 2rem;
       font-weight: 300;
-      line-height: 2rem;
     }
 
     & #image-container {
-      width: calc(550px * 0.7);
-      height: calc(872px * 0.7);
       position: relative;
       display: block;
       overflow: visible;
 
       & .panel {
-        width: calc(488px * 0.7);
         border-radius: 1rem;
         display: block;
         position: absolute;
       }
 
       & #panel-1 {
-        height: calc(810px * 0.7);
         background: var(--color-pri);
         z-index: 2;
-        bottom: calc(62px * 0.7);
       }
 
       & #panel-2 {
-        height: calc(622px * 0.7);
         background: var(--color-sec);
         z-index: 1;
-        left: calc(62px * 0.7);
         bottom: 0;
       }
 
       & #image {
         z-index: 3;
-        left: calc(28px * 0.7);
-        bottom: calc(62px * 0.7);
         position: absolute;
-        filter: drop-shadow(1rem 1rem 1rem rgba(0, 0, 0, .5));
+        filter: drop-shadow(.5rem .5rem .5rem rgba(0, 0, 0, .5));
       }
     }
   }

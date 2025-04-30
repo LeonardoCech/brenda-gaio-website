@@ -9,6 +9,8 @@ const Top = React.forwardRef<HTMLDivElement>((_props, ref) => {
 
   const isMobile = useIsMobile();
   const width = isMobile ? '400px' : '1264px';
+  const mobileMult = .5;
+  const desktopMult = .7;
 
   const [isInView, setIsInView] = useState(true); // Assume que está em view inicialmente
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -78,34 +80,56 @@ const Top = React.forwardRef<HTMLDivElement>((_props, ref) => {
       className='w-full h-fit flex flex-wrap justify-evenly items-center'
       style={{ width }}
     >
-      <div
-        className={`w-fit h-fit flex justify-center items-center`}
-      >
-        <div 
+      <div className={`w-fit h-fit flex justify-center items-center`} >
+        <div
           id='image-container'
           style={{
-            marginTop: isMobile ? '-5rem' : '5rem'
+            marginTop: isMobile ? '2rem' : '5rem',
+            width: `calc(550px * ${isMobile ? mobileMult : desktopMult})`,
+            height: `calc(872px * ${isMobile ? mobileMult : desktopMult})`,
           }}
         >
-          <div className='panel' id='panel-1'></div>
-          <div className='panel' id='panel-2'></div>
+          <div
+            id='panel-1'
+            className='panel'
+            style={{
+              height: `calc(810px * ${isMobile ? mobileMult : desktopMult})`,
+              width: `calc(488px * ${isMobile ? mobileMult : desktopMult})`,
+              bottom: `calc(62px * ${isMobile ? mobileMult : desktopMult})`,
+            }}
+          />
+
+          <div
+            id='panel-2'
+            className='panel'
+            style={{
+              height: `calc(622px * ${isMobile ? mobileMult : desktopMult})`,
+              width: `calc(488px * ${isMobile ? mobileMult : desktopMult})`,
+              left: `calc(62px * ${isMobile ? mobileMult : desktopMult})`,
+            }}
+          />
 
           <Image
             id='image'
             src='image.png'
             alt='Brenda Aldrovandi Gaio'
-            width={490 * .7}
-            height={770 * .7}
+            width={490 * (isMobile ? mobileMult : desktopMult)}
+            height={770 * (isMobile ? mobileMult : desktopMult)}
+            style={{
+              left: `calc(28px * ${isMobile ? mobileMult : desktopMult})`,
+              bottom: `calc(62px * ${isMobile ? mobileMult : desktopMult})`,
+            }}
           />
         </div>
       </div>
 
       <div
-        className={`flex flex-col gap-[4rem] ${contentVisible ? 'expand-horizontal' : ''}`}
+        className={`flex flex-col ${contentVisible ? 'expand-horizontal' : ''}`}
         style={{
-          width: isMobile ? '400px' : '500px',
-          fontSize: isMobile ? '3.25rem' : '4rem',
-          lineHeight: isMobile ? '3.25rem' : '4rem',
+          width: isMobile ? '300px' : '500px',
+          fontSize: isMobile ? '2rem' : '4rem',
+          lineHeight: isMobile ? '2rem' : '4rem',
+          gap: isMobile ? '2rem' : '4rem',
         }}
       >
         <span
@@ -123,7 +147,13 @@ const Top = React.forwardRef<HTMLDivElement>((_props, ref) => {
           </h1>
         </span>
 
-        <span className='flex flex-col gap-[1.5rem]'>
+        <span
+          className='flex flex-col gap-[1.5rem]'
+          style={{
+            fontSize: isMobile ? '1.25rem' : '2rem',
+            lineHeight: isMobile ? '1.25rem' : '2rem',
+          }}
+        >
           <p className={`graduation ${contentVisible ? 'fade-in' : 'invisible'}`}>
             Engenheira de Software
           </p>

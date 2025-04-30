@@ -3,6 +3,8 @@
 
 import { useState, useEffect, useRef } from 'react'
 
+import Image from 'next/image';
+
 import Top from '@/components/top'
 import useIsMobile from '@/components/isMobile'
 import Certifications from '@/components/certifications'
@@ -83,9 +85,6 @@ const Page = () => {
 
       <main
         className='w-full flex flex-col gap-[124px] items-center'
-        style={{
-          scale: isMobile ? 0.7 : 1
-        }}
       >
         <Top ref={topRef} />
 
@@ -104,6 +103,22 @@ const Page = () => {
           <Results ref={resultsRef} />
 
           <HowToImplement ref={howToImplementRef} /> */}
+
+        <a
+          id='download-portfolio-button'
+          href='/Portfólio-Brenda-A-Gaio.pdf'
+          download
+          className='flex gap-[1rem] items-center font-bold'
+        >
+          <Image
+            src='/download.svg'
+            alt='Baixar portfólio'
+            width={24}
+            height={24}
+          />
+
+          Baixar portfólio
+        </a>
 
         <Contact ref={contactRef} />
       </main>

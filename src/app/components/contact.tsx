@@ -63,22 +63,27 @@ const Contact = React.forwardRef<HTMLDivElement>((_props, ref) => {
         }
         sectionRef.current = node;
       }}
-      className='h-fit flex flex-col justify-center items-center p-[3rem] gap-[3rem]'
+      className='h-fit flex flex-col justify-center items-center p-[2rem] gap-[3rem]'
       style={{
         width: isMobile ? 'unset' : '100%'
       }}
     >
-      <div className='w-fit h-fit container flex justify-center items-center rounded-[1rem] p-[4rem]'>
+      <div 
+        className='w-fit h-fit container flex justify-center items-center rounded-[1rem]'
+        style={{
+          padding: isMobile ? '2rem' : '4rem'
+        }}
+        >
         <div
           className='content flex flex-col items-center gap-[2rem]'
           style={{
-            width: isMobile ? '360px' : '540px'
+            width: isMobile ? '100%' : '540px'
           }}
         >
           <h1
             style={{
-              fontSize: isMobile ? '2rem' : '2.5rem',
-              lineHeight: isMobile ? '2rem' : '2.5rem',
+              fontSize: isMobile ? '1.5rem' : '2.5rem',
+              lineHeight: isMobile ? '1.5rem' : '2.5rem',
             }}
           >Orçamentos e Contato</h1>
 
@@ -88,15 +93,15 @@ const Contact = React.forwardRef<HTMLDivElement>((_props, ref) => {
 
           <div className='flex items-center gap-[2rem]'>
             <a href='https://api.whatsapp.com/send/?phone=4789108767&text&type=phone_number&app_absent=0'>
-              <Image src='/whatsapp.svg' alt='WhatsApp' width={48} height={48} />
+              <Image src='/whatsapp.svg' alt='WhatsApp' width={40} height={40} />
             </a>
 
             <a href='mailto:bbrendagaioo@gmail.com'>
-              <Image src='/mail.svg' alt='E-mail' width={48} height={48} />
+              <Image src='/mail.svg' alt='E-mail' width={40} height={40} />
             </a>
 
             <a href='https://www.linkedin.com/in/brendaaldrovandigaio/'>
-              <Image src='/linkedin.svg' alt='LinkedIn' width={48} height={48} />
+              <Image src='/linkedin.svg' alt='LinkedIn' width={40} height={40} />
             </a>
           </div>
         </div>
