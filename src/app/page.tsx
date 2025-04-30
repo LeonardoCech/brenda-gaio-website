@@ -106,12 +106,12 @@ const Page = () => {
 
         <a
           id='download-portfolio-button'
-          href='/Portfólio-Brenda-A-Gaio.pdf'
+          href='Portfólio-Brenda-A-Gaio.pdf'
           download
           className='flex gap-[1rem] items-center font-bold'
         >
           <Image
-            src='/download.svg'
+            src='download.svg'
             alt='Baixar portfólio'
             width={24}
             height={24}

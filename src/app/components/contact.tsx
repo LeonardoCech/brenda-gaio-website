@@ -93,15 +93,15 @@ const Contact = React.forwardRef<HTMLDivElement>((_props, ref) => {
 
           <div className='flex items-center gap-[2rem]'>
             <a href='https://api.whatsapp.com/send/?phone=4789108767&text&type=phone_number&app_absent=0'>
-              <Image src='/whatsapp.svg' alt='WhatsApp' width={40} height={40} />
+              <Image src='whatsapp.svg' alt='WhatsApp' width={40} height={40} />
             </a>
 
             <a href='mailto:bbrendagaioo@gmail.com'>
-              <Image src='/mail.svg' alt='E-mail' width={40} height={40} />
+              <Image src='mail.svg' alt='E-mail' width={40} height={40} />
             </a>
 
             <a href='https://www.linkedin.com/in/brendaaldrovandigaio/'>
-              <Image src='/linkedin.svg' alt='LinkedIn' width={40} height={40} />
+              <Image src='linkedin.svg' alt='LinkedIn' width={40} height={40} />
             </a>
           </div>
         </div>
