@@ -17,59 +17,64 @@ body {
 
   #top {
     & .title {
+      font-size: 4rem;
+      line-height: 4rem;
       font-weight: 600;
+      white-space: nowrap;
       color: #0C2D66;
     }
 
     & .graduation {
       @apply font-bold;
 
-      font-size: 1.5rem;
+      font-size: 2rem;
       line-height: 2rem;
     }
 
     & .university {
       @apply italic;
-      @apply font-extralight;
+      @apply font-[Montserrat];
 
-      font-size: 1.5rem;
+      font-size: 2rem;
+      font-weight: 300;
       line-height: 2rem;
     }
 
     & #image-container {
-      width: 328.59px;
-      height: 521.2px;
+      width: calc(550px * 0.8);
+      height: calc(872px * 0.8);
       position: relative;
       display: block;
       overflow: visible;
 
       & .panel {
-        width: 297.6px;
-        border-radius: 1.5rem;
+        width: calc(488px * 0.8);
+        border-radius: 1rem;
         display: block;
         position: absolute;
       }
 
       & #panel-1 {
-        height: 493.2px;
+        height: calc(810px * 0.8);
         background: #0C2D66;
         z-index: 2;
-        bottom: 28px;
+        bottom: calc(62px * 0.8);
       }
 
       & #panel-2 {
-        height: 376.8px;
+        height: calc(622px * 0.8);
         background: #47979F;
         z-index: 1;
-        left: 32px;
+        left: calc(62px * 0.8);
         bottom: 0;
       }
 
       & #image {
         z-index: 3;
-        left: 16px;
-        bottom: 28px;
+        left: calc(28px * 0.8);
+        bottom: calc(62px * 0.8);
         position: absolute;
+        filter: drop-shadow(1rem 1rem 1rem rgba(0, 0, 0, .5)); 
       }
     }
   }

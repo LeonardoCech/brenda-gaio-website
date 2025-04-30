@@ -14,7 +14,7 @@ const Page = () => {
   const topRef = useRef<HTMLDivElement>(null)
 
   const isMobile = useIsMobile();
-  const width = isMobile ? '400px' : '1200px';
+  const width = isMobile ? '450px' : '1264px';
 
 
   useEffect(() => {
@@ -59,7 +59,12 @@ const Page = () => {
       {/* O width é informado pelo style porque as vezes não funciona como w-[<number>] */}
       <div className='z-1 flex flex-col items-center' style={{ width }}>
 
-        <main className='w-full flex flex-col gap-[124px] items-center'>
+        <main
+          className='w-full flex flex-col gap-[124px] items-center'
+          style={{
+            scale: isMobile ? 0.7 : 1
+          }}
+        >
           <Top ref={topRef} />
         </main>
       </div>
